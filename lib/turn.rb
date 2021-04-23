@@ -1,5 +1,5 @@
 def valid_move?(array, index)
-  if index.between?(0,8) && position_taken?(array,index) != true
+  if index.between?(0,8) && !position_taken?(array,index)
     true
   else
     false
@@ -8,9 +8,9 @@ end
 
 def position_taken?(array, i)
   if array[i] == " " || array[i] == "" || array[i] == nil
-    true
-  elsif array[i] == "X" || array[i] == "O"
     false
+  elsif array[i] == "X" || array[i] == "O"
+    true
   end
 end
 
